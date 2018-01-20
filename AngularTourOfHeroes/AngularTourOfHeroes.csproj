@@ -205,6 +205,8 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="src\app\app.component.css" />
     <Content Include="src\app\app.component.html" />
+    <Content Include="src\app\dashboard\dashboard.component.css" />
+    <Content Include="src\app\dashboard\dashboard.component.html" />
     <Content Include="src\app\hero-detail\hero-detail.component.css" />
     <Content Include="src\app\hero-detail\hero-detail.component.html" />
     <Content Include="src\app\heroes\heroes.component.css" />
@@ -239,6 +241,8 @@
     <TypeScriptCompile Include="src\app\app.component.spec.ts" />
     <TypeScriptCompile Include="src\app\app.component.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
+    <TypeScriptCompile Include="src\app\dashboard\dashboard.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\dashboard\dashboard.component.ts" />
     <TypeScriptCompile Include="src\app\hero-detail\hero-detail.component.spec.ts" />
     <TypeScriptCompile Include="src\app\hero-detail\hero-detail.component.ts" />
     <TypeScriptCompile Include="src\app\hero.service.spec.ts" />
