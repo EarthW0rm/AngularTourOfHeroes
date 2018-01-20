@@ -237,6 +237,7 @@
     <TypeScriptCompile Include="src\app\hero.ts" />
     <TypeScriptCompile Include="src\app\heroes\heroes.component.spec.ts" />
     <TypeScriptCompile Include="src\app\heroes\heroes.component.ts" />
+    <TypeScriptCompile Include="src\app\mock-heroes.ts" />
     <TypeScriptCompile Include="src\main.ts" />
   </ItemGroup>
   <ItemGroup>
