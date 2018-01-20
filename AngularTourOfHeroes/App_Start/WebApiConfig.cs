@@ -1,6 +1,9 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Formatting;
+using System.Net.Http.Headers;
 using System.Web.Http;
 
 namespace AngularTourOfHeroes
@@ -9,7 +12,7 @@ namespace AngularTourOfHeroes
     {
         public static void Register(HttpConfiguration config)
         {
-            // Web API configuration and services
+            
 
             // Web API routes
             config.MapHttpAttributeRoutes();
@@ -19,6 +22,10 @@ namespace AngularTourOfHeroes
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+            // Web API configuration and services
+            //config.Formatters.Clear();
+            //config.Formatters.Add(new JsonMediaTypeFormatter());
         }
     }
+
 }

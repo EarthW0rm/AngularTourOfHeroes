@@ -6,28 +6,31 @@ import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 
 import { MessageService } from './message.service';
-import { HttpClientModule , HttpHeaders } from '@angular/common/http';
+import { HttpClient , HttpHeaders } from '@angular/common/http';
 
 @Injectable()
 export class HeroService {
 
     getHeroes(): Observable<Hero[]> {
+        debugger;
         this.messageService.add('HeroService: fetched heroes');
-        return of(HEROES);
-        //return this.http.get<Hero[]>(this.heroesUrl)
+        //return of(HEROES);
+        return this.httpClient.get<Hero[]>(this.heroesUrl);
     }
 
     getHero(id: number): Observable<Hero> {
         this.messageService.add(`HeroService: fetched hero id=${id}`);
-        return of(HEROES.find(hero => hero.id === id));
+
+        const url = `${this.heroesUrl}/${id}`;
+        return this.httpClient.get<Hero>(url);
     }
 
-    constructor(private messageService: MessageService, private http: HttpClientModule) { }
+    constructor(private messageService: MessageService, private httpClient: HttpClient) { }
 
     private log(message: string) {
         this.messageService.add('HeroService: ' + message);
     }
 
-    private heroesUrl = 'api/heroes';
+    private heroesUrl = '../api/Herois';
 
 }

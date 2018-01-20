@@ -16,9 +16,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-    imports: [BrowserModule, FormsModule, AppRoutingModule],
+    imports: [BrowserModule, FormsModule, AppRoutingModule, HttpClientModule],
     declarations: [AppComponent, HeroesComponent, HeroDetailComponent, MessagesComponent, DashboardComponent],
     bootstrap: [AppComponent],
-    providers: [HeroService, MessageService, HttpClientModule]
+    providers: [HeroService, MessageService,]
 })
 export class AppModule { }

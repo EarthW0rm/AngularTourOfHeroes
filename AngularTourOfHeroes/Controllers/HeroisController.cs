@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
@@ -8,21 +7,20 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
-using AngularTourOfHeroes;
 
 namespace AngularTourOfHeroes.Controllers
 {
-    public class HeroesController : ApiController
-    {
+    public class HeroisController : ApiController
+    {// GET api/values
         private ModelHeroes db = new ModelHeroes();
-
-        // GET: api/Heroes
+        
+        // GET: api/HeroEntities
         public IQueryable<HeroEntity> GetHeroEntities()
         {
             return db.HeroEntities;
         }
 
-        // GET: api/Heroes/5
+        // GET: api/HeroEntities/5
         [ResponseType(typeof(HeroEntity))]
         public IHttpActionResult GetHeroEntity(int id)
         {
@@ -35,7 +33,7 @@ namespace AngularTourOfHeroes.Controllers
             return Ok(heroEntity);
         }
 
-        // PUT: api/Heroes/5
+        // PUT: api/HeroEntities/5
         [ResponseType(typeof(void))]
         public IHttpActionResult PutHeroEntity(int id, HeroEntity heroEntity)
         {
@@ -70,7 +68,7 @@ namespace AngularTourOfHeroes.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Heroes
+        // POST: api/HeroEntities
         [ResponseType(typeof(HeroEntity))]
         public IHttpActionResult PostHeroEntity(HeroEntity heroEntity)
         {
@@ -85,7 +83,7 @@ namespace AngularTourOfHeroes.Controllers
             return CreatedAtRoute("DefaultApi", new { id = heroEntity.Id }, heroEntity);
         }
 
-        // DELETE: api/Heroes/5
+        // DELETE: api/HeroEntities/5
         [ResponseType(typeof(HeroEntity))]
         public IHttpActionResult DeleteHeroEntity(int id)
         {
