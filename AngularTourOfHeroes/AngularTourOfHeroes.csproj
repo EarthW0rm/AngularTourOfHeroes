@@ -234,6 +234,7 @@
     <TypeScriptCompile Include="src\app\app.component.spec.ts" />
     <TypeScriptCompile Include="src\app\app.component.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
+    <TypeScriptCompile Include="src\app\hero.ts" />
     <TypeScriptCompile Include="src\app\heroes\heroes.component.spec.ts" />
     <TypeScriptCompile Include="src\app\heroes\heroes.component.ts" />
     <TypeScriptCompile Include="src\main.ts" />
