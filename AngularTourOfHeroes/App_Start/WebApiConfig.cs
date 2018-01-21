@@ -11,9 +11,7 @@ namespace AngularTourOfHeroes
     public static class WebApiConfig
     {
         public static void Register(HttpConfiguration config)
-        {
-            
-
+        {   
             // Web API routes
             config.MapHttpAttributeRoutes();
 
@@ -23,8 +21,8 @@ namespace AngularTourOfHeroes
                 defaults: new { id = RouteParameter.Optional }
             );
             // Web API configuration and services
-            //config.Formatters.Clear();
-            //config.Formatters.Add(new JsonMediaTypeFormatter());
+            config.Formatters.Clear();
+            config.Formatters.Add(new JsonMediaTypeFormatter());
         }
     }
 

@@ -33,7 +33,7 @@ export class HeroService {
     updateHero(hero: Hero): Observable<any> {
         const url = `${this.heroesUrl}/${hero.Id}`;
 
-        return this.httpClient.put(this.heroesUrl, hero, this.httpOptions).pipe(
+        return this.httpClient.put(url, hero, this.httpOptions).pipe(
             tap(_ => this.log(`updated hero id=${hero.Id}`)),
             catchError(this.handleError<any>('updateHero'))
         );
@@ -62,7 +62,7 @@ export class HeroService {
         this.messageService.add('HeroService: ' + message);
     }
 
-    private heroesUrl = '../api/Herois';
+    private heroesUrl = '/api/Herois';
 
     private httpOptions = {
         headers: new HttpHeaders({ 'Content-Type': 'application/json' })

@@ -4,7 +4,6 @@ using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 
@@ -15,14 +14,14 @@ namespace AngularTourOfHeroes.Controllers
         private ModelHeroes db = new ModelHeroes();
         
         // GET: api/HeroEntities
-        public IQueryable<HeroEntity> GetHeroEntities()
+        public List<HeroEntity> Get()
         {
-            return db.HeroEntities;
+            return db.HeroEntities.Select(d => d).ToList();
         }
 
         // GET: api/HeroEntities/5
         [ResponseType(typeof(HeroEntity))]
-        public IHttpActionResult GetHeroEntity(int id)
+        public IHttpActionResult Get(int id)
         {
             HeroEntity heroEntity = db.HeroEntities.Find(id);
             if (heroEntity == null)
@@ -34,8 +33,8 @@ namespace AngularTourOfHeroes.Controllers
         }
 
         // PUT: api/HeroEntities/5
-        [ResponseType(typeof(void))]
-        public IHttpActionResult PutHeroEntity(int id, HeroEntity heroEntity)
+        [ResponseType(typeof(void)), HttpPut]
+        public IHttpActionResult Put(int id, HeroEntity heroEntity)
         {
             if (!ModelState.IsValid)
             {
@@ -70,7 +69,7 @@ namespace AngularTourOfHeroes.Controllers
 
         // POST: api/HeroEntities
         [ResponseType(typeof(HeroEntity))]
-        public IHttpActionResult PostHeroEntity(HeroEntity heroEntity)
+        public IHttpActionResult Post(HeroEntity heroEntity)
         {
             if (!ModelState.IsValid)
             {
@@ -85,7 +84,7 @@ namespace AngularTourOfHeroes.Controllers
 
         // DELETE: api/HeroEntities/5
         [ResponseType(typeof(HeroEntity))]
-        public IHttpActionResult DeleteHeroEntity(int id)
+        public IHttpActionResult Delete(int id)
         {
             HeroEntity heroEntity = db.HeroEntities.Find(id);
             if (heroEntity == null)
