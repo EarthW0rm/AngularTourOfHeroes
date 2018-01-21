@@ -220,6 +220,8 @@
     <Content Include="src\app\dashboard\dashboard.component.html" />
     <Content Include="src\app\hero-detail\hero-detail.component.css" />
     <Content Include="src\app\hero-detail\hero-detail.component.html" />
+    <Content Include="src\app\hero-search\hero-search.component.css" />
+    <Content Include="src\app\hero-search\hero-search.component.html" />
     <Content Include="src\app\heroes\heroes.component.css" />
     <Content Include="src\app\heroes\heroes.component.html" />
     <Content Include="src\app\messages\messages.component.css" />
@@ -256,6 +258,8 @@
     <TypeScriptCompile Include="src\app\dashboard\dashboard.component.ts" />
     <TypeScriptCompile Include="src\app\hero-detail\hero-detail.component.spec.ts" />
     <TypeScriptCompile Include="src\app\hero-detail\hero-detail.component.ts" />
+    <TypeScriptCompile Include="src\app\hero-search\hero-search.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\hero-search\hero-search.component.ts" />
     <TypeScriptCompile Include="src\app\hero.service.spec.ts" />
     <TypeScriptCompile Include="src\app\hero.service.ts" />
     <TypeScriptCompile Include="src\app\hero.ts" />

@@ -20,6 +20,13 @@ namespace AngularTourOfHeroes
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            config.Routes.MapHttpRoute(
+                name: "DefaultApiSearch",
+                routeTemplate: "api/{controller}/{searchPattern}",
+                defaults: new { searchPattern = RouteParameter.Optional }
+            );
+
             // Web API configuration and services
             config.Formatters.Clear();
             config.Formatters.Add(new JsonMediaTypeFormatter());

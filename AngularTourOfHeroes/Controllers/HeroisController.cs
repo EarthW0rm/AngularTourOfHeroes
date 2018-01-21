@@ -32,6 +32,12 @@ namespace AngularTourOfHeroes.Controllers
             return Ok(heroEntity);
         }
 
+        [ResponseType(typeof(IQueryable<HeroEntity>))]
+        public IHttpActionResult Get(string searchPattern)
+        {
+            return Ok(db.HeroEntities.Where(d => d.Name.ToLower().Contains(searchPattern.ToLower())));
+        }
+
         // PUT: api/HeroEntities/5
         [ResponseType(typeof(void)), HttpPut]
         public IHttpActionResult Put(int id, HeroEntity heroEntity)
